@@ -1,0 +1,463 @@
+################## Visualizar resultados ##################												
+
+# Ejemplo:												
+print(5 / 8)												
+
+# Ejercicio												
+# print(---)												
+
+################## Operaciones con python ##################												
+
+# Suma												
+# print(---)												
+
+# Division de dos numeros												
+# print(--- / ---)												
+
+# Ejemplo: Potencia												
+print(4**2)												
+
+# Ejemplo Modulo												
+print(18 % 7)												
+
+# Suma, Resta, Multiplicacion, Division, Modulo, Potencia.												
+# Añade comentarios a cada operacion.												
+#print(---)												
+#print(---)												
+#print(---)												
+#print(---)												
+#print(---)												
+#print(---)												
+
+# Tasa de crecimiento de 100 pesos al 10% por 7 años.												
+print(100*1.1**7)												
+
+# Cual es el valor de 100 pesos a 20 años?												
+#print(---)												
+
+################## Asignacion de variables ##################												
+
+#Ejemplo												
+x = 5												
+print(x)												
+
+#Calculo de interes: Ahorro*Crecimiento*Tiempo												
+
+# Ahorro												
+# Crecimiento												
+# Tiempo												
+
+Interes = 0												
+#print(Interes)												
+
+# Otros tipos de variable, int, float,str, bool												
+
+entera = 10												
+decimal = 1.4												
+frase = "Hola Mundo"												
+Positivo = True												
+
+# Como saber el tipo de variable? Usar la funcion: type().												
+#print(type(positivo))												
+
+# Operaciones con otros tipos de variables												
+# Prueba las operaciones basicas con los tipos de variables definidos												
+Frase1 = "Hola"												
+Frase2 = "Como estas?"												
+FraseFinal = Frase1 + Frase2												
+print(FraseFinal)												
+
+# Conversion entre tipos de variables												
+
+# Definition of savings and result												
+Ahorros = 100												
+Resultado = 100 * 1.10 ** 7												
+
+# Completa el codigo												
+# print("Mis ahorros eran $" + str(---) + " y ahora tengo $" + str(---) + ". Increible!")												
+
+# Definicion de "PI"												
+pi_string = "3.1415926"												
+
+#¿Que tipo de variable es pi_string?												
+
+# Conversion de pi en float												
+pi_float = float(pi_string)												
+
+# ¿Es posible convertir una variable bool a int?												
+# ¿Es posible convertir una variable float a int?												
+# print(---)												
+
+################## Listas ##################												
+# Creando mi primer lista (conjunto de variables, objetos, funciones, etc)												
+
+a = "Uno"												
+b = "Dos"												
+my_lista = ["mi", "lista", a, b]												
+
+# area variables (in square meters)												
+comedor = 11.25												
+cocina = 18.0												
+sala = 20.0												
+recamara = 10.75												
+banio = 9.50												
+
+# Crea una lista con las variables anteriores.												
+#print(---)												
+
+# Crear una lista con diferentes tipos												
+areas = ["comedor", comedor]												
+
+# Completa la lista con los nombres de las habitaciones y su área.												
+# areas = [---]												
+# print(---)												
+
+################## Listas de listas? ##################												
+
+# house information as list of lists												
+hogar = [["comedor", comedor],												
+         ["cocina", cocina]]												
+
+# Imprime la lista creada												
+print(hogar)												
+
+# ¿Que tipo de variable es hogar?												
+# print(---)												
+
+# Finaliza la lista con todos los lugares del hogar,												
+# adicionando una variable logica si el de tu hogar mide mas que el valor de prueba.												
+
+# print(---)												
+
+# Accceder a los valores de las listas												
+
+x = [["a", "b", "c"],												
+     ["d", "e", "f"],												
+     ["g", "h", "i"]]												
+print(x[2][0])												
+print(x[2][:2])												
+
+# Añadir nuevos valores a la lista												
+x = ["a", "b", "c", "d"]												
+y = x + ["e", "f"]												
+
+print(y)												
+
+# Eliminar valores de la lista												
+x = ["a", "b", "c", "d"]												
+del(x[1])												
+
+print(x)												
+
+# Con la lista de los lugares del hogar añade por lo menos 3 nuevos lugares y elimina 1.												
+#print(---)												
+
+################## Utilizando Funciones Estandar ##################												
+
+# print(),  type(), str(), int(), bool() and float()												
+
+# Urilizando las funciones max(), sorted()												
+primera = [11.25, 18.0, 20.0]												
+segunda = [10.75, 9.50]												
+
+# Paste together first and second: full												
+total = primera + segunda												
+
+# ¿Cual es la funcion de max y sorted? Emplea la funciones, asigna los resultados a												
+# nuevas variables e imprime el resultado.												
+
+# print(---)												
+
+
+# Necesitas ayuda, python puede ayudar.												
+
+# help(max)												
+# ?max												
+
+################## Metodos para Cadenas de caracteres ##################												
+
+# type help(str)												
+
+# string to experiment with: place												
+lugar = "alberca"												
+
+# Minisculas a MAYUSCULAS, usa el metodo upper.												
+
+lugar_MAY = lugar.upper()												
+
+# Imprime el resultado obtenido y comparalo con la variable original.												
+
+# print(---)												
+
+# Contar el numero de caracteres en una frase metodo .count()												
+
+print(lugar.count(a))												
+
+# Cuantas veces aparece la vocal a en tu nombre?												
+
+# print(---)												
+
+################## Metodos para Listas ##################												
+
+# index():												
+# count():												
+# append():												
+# remove():												
+# reverse():												
+
+# Lista de prueba												
+valores  = [11.25, 18.0, 20.0, 10.75, 9.50, 12, -3]												
+
+# Con la lista de prueba, emplea cada uno de los metodos y describe cual es su funcion, si lo requieres												
+# emplea la ayuda en la consola de python o usando el navegador de internet.												
+# Imprime cada uno de los resultados.												
+
+################## Importar paquetes (packages) ##################												
+
+r = 0.43												
+
+# Import the math package												
+import math												
+
+# Calcula el perimetro de un circulo												
+C = 2*math.pi*r												
+
+# Calcula el area de un circulo, asigna el resultado a una variable e imprime el resultado												
+# A = ---												
+
+# Build printout												
+# print("Circunferencia: " + str(---))												
+# print("Area: " + ---)												
+
+
+################## Diccionarios ##################												
+
+# Considera las siguientes listas:												
+paises = ['España', 'Francia', 'Alemania', 'Noriega']												
+capitales = ['madrid', 'paris', 'berlin', 'oslo']												
+
+# Cual es el indice de Alemania? emplea el metodo index()												
+# ind_Ale = ---												
+# print(ind_ger)												
+
+# Empleando el valor de ind_Ale, imprime la capital de Alemania de la lista capital												
+# print(---)												
+
+# Crear un diccionario nos ayuda para tener un mejor manejo de la información.												
+# Para nuestro ejemplo anterior los paises seria las claves (keys) y las capitales los valores.												
+
+# Ejemplo												
+mi_diccionario = {												
+  key1: "value1",												
+  key2: "value2",												
+}												
+
+# Haciendo uso de las listas paises y capitales, crea un diccionario llamado Europa, e imprime el resultado.												
+
+# Europa = {---}												
+# print(---)												
+
+# Accediendo a los valores de un diccionario a partir de las claves												
+print(mi_diccionario['key1'])												
+
+# Asigna a una nueva variable el valor de la clave Alemania e imprimerlo.												
+# print(---)												
+
+# Para obtener las claves de un diccionario se puede emplear el metodo .keys()												
+print(mi_diccionario.keys())												
+
+# Imprime el las claves par el diccionario Europa.												
+
+# Añadir, modificar y eliminar elementos de un diccionario.												
+
+mi_diccionario["key3"] = "value3"												
+mi_diccionario["key1"] = "value1+1"												
+del(mi_diccionario["key2"])												
+print(mi_diccionario)												
+
+# Para el diccionario europa, crea, modifica y elimina valores de su contenido e imprime los resultados												
+# print(---)												
+
+# Diccionarios de diccionarios ??												
+Europa = {'España': {'capital': 'madrid', 'Poblacion': 46},												
+          'Francia': {'capital': 'paris', 'Poblacion': 66}}												
+  
+  # Print out the capital of France												
+  print(Europa['Francia']['capital'])												
+  
+  # Añadir informacion a un diccionario												
+  
+  data = {'capital': 'roma', 'Poblacion': 59}												
+  Europa['Italia'] = data												
+  
+  # Ciclos for y diccionarios, metodo .items()												
+  
+  
+  mi_diccionario = {												
+  key1: "value1",												
+  key2: "value2",												
+  key3: "value3",												
+  key4: "value4"												
+  }												
+  
+  for key, value in mi_diccionario.items():												
+  print(key + " -- " + str(value))												
+  
+  # Usando la misma metodología imprime los valores del diccionario Europa.												
+  # for ---												
+  
+  #################################################												
+  #################### BotChat ####################												
+  #################################################												
+  
+  # Para entender la creacion de chatbots es necesario entender el funcionamiento de funciones												
+  # creadas por nosotros.	
+  
+  # Funciones:
+  
+def sumaUno(numero):
+    resultado = numero + 1
+    return resultado
+  
+def sumaDos(numero, valor):
+    resultado = numero + valor
+    return resultado
+  
+# Crea 4 funciones, resta, multiplicacion, division y potencia. Asigna los valores a nuevas
+# variables e imprime los resultados.   
+  
+  
+  #Ejemplo 1												
+  
+  # Definimos dos variables que emplearemos como plantilla para los mensajes que enviaremos y recibiremos												
+  bot_template = "BOT : {0}"												
+  user_template = "USUARIO : {0}"												
+  
+  # Definimos una funcion que responde a un mensaje del usuario.												
+  # Emplearemos la palabra reservada def.												
+  # def nombre_funcion(parametros):												
+  
+  def responde(mensaje):												
+  # Concatena el mensaje de usuario al final de mensaje estandar del bot.												
+  bot_message = 'Te escucho! Tu dijiste: ' + mensaje												
+  # Regresa el resultado												
+  return bot_message												
+  
+  responde('Hola Como estas?')												
+  
+  
+  # Chatbot II												
+  
+  def envia_mensaje(mensaje):												
+  # Imprime la plantilla incluyendo user_message												
+  print(user_template.format(mensaje))												
+  # Emplea la funcion responde												
+  respuesta = responde(mensaje)												
+  #Imprime bot_template incluyendo la respuesta del bot.												
+  print(bot_template.format(respuesta))												
+  
+  # Envia un mensaje al bot												
+  envia_mensaje("Hola")												
+  
+  # Avancemos creando un bot más complejo, no olvides la funcion envia_mensaje la utilizaremos mas adelante.												
+  
+  # Define variables												
+  nombre = "Greg"												
+  clima = "cloudy"												
+  
+  # Vamos a crear un diccionario de prueba												
+  respuestas = {												
+  Como te llamas?: "My nombre es {0}".format(nombre),												
+  Cual es el clima de hoy?: "El clima es {0}".format(clima),												
+  default: "No he podido comprender"												
+  }												
+  
+  # Tomemos nuestra funcion responde y hagamos unas modificaciones empleando el nuevo diccionario												
+  # El objetivo es regresar la respuesta en el diccionario si la pregunta concuerda con el mensaje del usuario												
+  def responde(mensaje):												
+  # Revisa si el mensaje se encuentra en el direccionario												
+  if mensaje in respuestas:												
+  # Return the matching message												
+  bot_mensaje = respuestas[mensaje]												
+  else:												
+  # Si no se encuentra envia el mensaje por default												
+  bot_mensaje = respuestas["default"]												
+  return bot_mensaje												
+  
+  
+  envia_mensaje("Como te llamas?")												
+  envia_mensaje("Cual es el clima de hoy?")												
+  # Intenta llamar la funcion envia_mensaje tal que te conteste el mensaje por default												
+  # envia_mensaje(---)												
+  # Modifica el diccionario respuestas tal que pueda contestar cual es su musica favorita												
+  
+  # Vamos a hacer mas complejo nuestro bot adicionando un poco de variedad												
+  
+  # Vamos a importar una nueva libreria, utilizando el navegador investiga cual es la funcion de paquete random.												
+  
+  # Import the random module
+  import random												
+  
+  nombre = "JorgeBot"												
+  clima = "Soleado"
+  
+  # Define a dictionary containing a list of responses for each message
+  respuestas = {
+    "Cual es tu nombre?": [
+      "Mi nombre es {0}".format(nombre),
+      "Me llaman {0}".format(nombre),
+      "Se me conoce como {0}".format(nombre)
+      ],
+    "Cual es el clima de hoy?": [
+      "El clima es {0}".format(clima),
+      "Hoy esta".format(clima)
+      ],
+    "default": ["No entiendo tu pregunta"]
+  }
+  
+  # Use random.choice() to choose a matching response
+  # Vamos a utilizar random.choice para seleccionar la respuesta adecuada
+  def responde(mensaje):
+    # Revisa si el mensaje se encuentra en las respuestas
+    if mensaje in respuestas:
+    # Regresa una respuesta aleatoria
+    bot_mensaje = random.choice(respuestas[mensaje])
+  else:
+    # Regresa una respuesta default
+    bot_mensaje = random.choice(respuestas["default"])
+  return bot_mensaje
+  
+envia_mensaje("Cual es tu nombre?")	
+
+# Modifica respuestas tal que responda a la pregunta, cual es su mascota favorita. 
+
+# envia_mensaje(---)
+      
+# Vamos a añadir algo de personalidad a nuestro chatbot	
+
+repuestas = {'pregunta': ["No lo se", 'Esa pregunta es complicada ...'],
+  'sentencia': ['Dime mas',
+                'Por que piensas eso?',
+                'Eso es muy interesante',
+                'Podriamos buscar mas informacion',
+                'Esa es una gran idea',
+                'Maravilloso',
+                'Continua']}
+
+# import random
+
+def responde(mensaje):
+  # El mensaje tiene signo de interrogacion?
+  if mensaje.endswith('?'):
+  # Regresa una pregunta aleatoria
+  return random.choice(respuestas["pregunta"])
+  # Regresa una sentencia aleatoria
+return random.choice(respuestas["sentencia"])
+
+
+# Envia mensaje con signo de interrogacion
+envia_mensaje("Que dia es hoy?")
+
+# Envia mensaje sin interrogacion al final
+envia_mensaje("Me interesa ser exitoso.")
+
