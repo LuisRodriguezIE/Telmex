@@ -1,0 +1,173 @@
+################################################################################
+
+# Empecemos con una
+# red neuronal muy sencilla.
+
+#### "FORWARD PROPAGATION" ####
+
+# Ejemplo:
+
+import numpy as np   # Paquete con funciones para manejo de operaciones con vectores, matrices, tensores.
+
+info_entrada = np.array([3,4])
+pesos_red = {'nodo_0': np.array([1,1]),
+             'nodo_1': np.array([-1, 1]),
+             'salida': np.array([2, -1])}
+
+# Este es el valor de los nodos 0 y 1
+nodo0_valor = (info_entrada*pesos_red['nodo_0']).sum()
+nodo1_valor = (info_entrada*pesos_red['nodo_1']).sum()
+
+# Construimos la hidden_layer con los valores de los nodos
+hidden_layer_val = np.array([nodo0_valor, nodo1_valor])
+# print(hidden_layer_val)
+
+# Obtenemos la salida de la red neuronal.
+salida = (hidden_layer_val* pesos_red['salida']).sum()
+print("Resultado de mi red: "+str(salida))
+
+# Es momento de que construyas tu primera "red".
+# Modifica las variables de entrada y/o pesos tal que la salida de
+# red sea -39:
+
+# ---
+# ---
+# ---
+
+# Funcion de Activacion "Activation Functions" #
+
+# Es momento de agregar nuestra funcion de activacion para
+# captar las no linealidades de nuetro sistema.
+
+# Ejemplo
+
+info_entrada = np.array([3,4])
+pesos_red = {'nodo_0': np.array([1,1]),
+             'nodo_1': np.array([-1, 1]),
+             'salida': np.array([2, -1])}
+
+# Este es el valor de los nodos 0 y 1
+nodo0_entrada = (info_entrada*pesos_red['nodo_0']).sum()
+nodo0_salida = np.tanh(nodo0_entrada)   # <---- Aqui esta la funcion de activación.
+
+nodo1_entrada = (info_entrada*pesos_red['nodo_1']).sum()
+nodo1_salida = np.tanh(nodo1_entrada)   # <---- Aqui esta la funcion de activación.
+
+# Definicion de hidden_layer
+hidden_layer_val = np.array([nodo0_salida, nodo1_salida])
+print(hidden_layer_val)
+
+salida = (hidden_layer_val* pesos_red['salida']).sum()
+print("Mi segunda red: "+ str(salida))
+
+# En el siguiente ejemplo vamos a crear nuestra propia funcion de activacion "relu".
+
+# Rectified
+# Linear
+# Activation
+# Function (ReLU)
+
+def relu(input):
+    # Que es lo que hace la siguiente linea de codigo usando la funcion max?
+    output = max(input, 0)
+
+    # Regresa el valor obtenido
+    return (output)
+
+# Al igual que hicimos para la funcion tanh, emplea la funcion relu para calcular los valores del nodo 0 y 1.
+
+#nodo0_entrada = ---
+#nodo0_salida = ---
+
+#nodo1_entrada = ---
+#nodo1_salida = ---
+
+# Definicion de hidden_layer
+# hidden_layer_val = ---
+
+# Definicion del modelo de salida
+# salida = ---
+# print("El valor de mi RN usando relu es: "+ str(salida))
+
+
+############# Redes Neuronales con Multiples entradas #############
+
+info_entrada = [np.array([3, 5]),
+                np.array([ 1, -1]),
+                np.array([0, 0]),
+                np.array([8, 4])]
+
+pesos_red = {'node_0': np.array([2, 4]),
+             'node_1': np.array([ 4, -5]),
+             'output': np.array([2, 7])}
+
+# Vamos a definir una funcion para predecir.
+def predice_red(info_entrada_fila, pesos):
+
+    # Valor del nodo0
+    nodo0_entrada = (info_entrada_fila * pesos['node_0']).sum()
+    nodo0_salida  = relu(nodo0_entrada)
+
+    # Valor del nodo1
+    nodo1_entrada = (info_entrada_fila * pesos['node_1']).sum()
+    nodo1_salida = relu(nodo1_entrada)
+
+    # hidden layer
+    hidden_layer_val = np.array([nodo0_salida, nodo1_salida])
+
+    # Salida del modelo
+    capa_entrada_salida = (hidden_layer_val * pesos['output']).sum()
+    salida = relu(capa_entrada_salida)
+
+    # Devulve la funcion de salida
+    return (salida)
+
+
+# Lista vacia resultados
+resultados = []
+for info_entrada_fila in info_entrada:
+    # Cada resultado se agrega a la lista resultados
+    resultados.append(predice_red(info_entrada_fila, pesos_red))
+
+# Print results
+print(resultados)
+
+############ Codigo para crear una red neuronal de multiples capas ############
+
+info_entrada = np.array([3, 5])
+
+pesos_red = {'node_0_0': np.array([2, 4]),
+             'node_0_1': np.array([ 4, -5]),
+             'node_1_0': np.array([-1,  2]),
+             'node_1_1': np.array([1, 2]),
+             'output': np.array([2, 7])}
+
+def predice_red(info_entrada):
+    # Nodo 0, primera capa
+    nodo_0_0_entrada = (info_entrada * pesos_red['node_0_0']).sum()
+    nodo_0_0_salida = relu(nodo_0_0_entrada)
+
+    # Nodo 1, primera capa
+    nodo_0_1_entrada = (info_entrada * pesos_red['node_0_1']).sum()
+    nodo_0_1_salida = relu(nodo_0_1_entrada)
+
+    # hidden_layer 0
+    hidden_0_salida = np.array([nodo_0_0_salida, nodo_0_1_salida])
+
+    node_1_0_entrada = (hidden_0_salida * pesos_red['node_1_0']).sum()
+    node_1_0_salida = relu(node_1_0_entrada)
+
+    node_1_1_entrada = (hidden_0_salida * pesos_red['node_1_1']).sum()
+    node_1_1_salida = relu(node_1_1_entrada)
+
+    hidden_1_salida = np.array([node_1_0_salida, node_1_1_salida])
+
+    # Salida Red Neuronal 2 capas.
+    salida_modelo = (hidden_1_salida * pesos_red['output']).sum()
+
+    # Return model_output
+    return (salida_modelo)
+
+
+salida = predice_red(info_entrada)
+print(salida)
