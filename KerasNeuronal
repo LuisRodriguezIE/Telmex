@@ -1,0 +1,70 @@
+##############################################################################
+###### Vamos a usar el paquete mas famoso y poderoso para deep learning ######
+
+import tensorflow as tf
+import numpy as np
+import matplotlib.pyplot as plt
+
+print(tf.__version__)
+mnist = tf.keras.datasets.mnist
+#print(mnist)
+
+#print("La informacion que utilizamos es: "+
+#      str(type(mnist.load_data())))
+
+# Usemos una tupla para almacenar la informacion
+(x_train,y_train), (x_test,y_test) = mnist.load_data()
+
+# Vamos a grafica los datos con los que trabajaremos
+#print(x_train[0])
+
+plt.imshow(x_train[0], cmap=plt.cm.binary)
+# plt.show()
+
+# Normalicemos nuestro conjunto de prueba
+x_train = tf.keras.utils.normalize(x_train, axis=1)
+x_test = tf.keras.utils.normalize(x_test, axis=1)
+
+# Vuelve a grafica tu información y observa que pasa.
+
+
+# Contruyamos el modelo de la red neuronal, en otras palabras
+# vamos a definir las variables de entrada, las capas de la red
+# y configurar lo necesario.
+
+model = tf.keras.models.Sequential()
+model.add(tf.keras.layers.Flatten())
+model.add(tf.keras.layers.Dense(150, activation = tf.nn.relu))
+model.add(tf.keras.layers.Dense(50, activation = tf.nn.relu))
+model.add(tf.keras.layers.Dense(10, activation = tf.nn.softmax))
+
+# Definamos los parametros de optimizacion del algoritmo
+
+model.compile(optimizer = 'adam',
+              loss = "sparse_categorical_crossentropy",
+              metrics=['accuracy'])
+
+model.fit(x_train,y_train, epochs = 3)
+
+val_loss, val_acc = model.evaluate(x_test,y_test)
+
+print(val_loss, val_acc)
+
+# Lineas para guardar y cargar tu modelo para posteriores usos
+
+#model.save('num_reader.model')
+#new_model = tf.keras.models.load_model('num_reader.model')
+
+# Utilizamos el modelo para predecir los valores.
+predictions = model.predict([x_test])
+print(predictions)
+
+print(np.argmax(predictions[0]))
+print(np.argmax(predictions[1]))
+
+# Imagenes con nuestros valores predecidos.
+plt.imshow(x_test[0])
+plt.show()
+
+plt.imshow(x_test[1])
+plt.show()
